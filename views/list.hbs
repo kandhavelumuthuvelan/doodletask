@@ -1,0 +1,35 @@
+<div>
+<a class="btn btn-secondary" href="/memo"><i class="fa fa-plus"></i> Create New</a> 
+ 
+<h3 align="center">Edureka's Course List</h3>
+</div>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Memo Name</th>
+<th>Memo Id</th>
+<th>Memo creation</th>
+<th>memo Updation</th>
+<th>memo Status</th>
+<th>expiry</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{{#each list}}
+<tr align="center">
+<td>{{this.taskName}}</td>
+<td>{{this.memoId}}</td>
+<td>{{this.created_at}}</td>
+<td>{{this.created_at}}</td>
+<td>{{this.status}}</td>
+<td>{{this.expiry}}</td>
+<td>
+<a href="/memo/{{this._id}}"> Edit </a>
+<a href="/memo/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"> Delete </a>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
